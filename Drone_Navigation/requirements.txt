@@ -1,0 +1,12 @@
+stable-baselines3==2.8.0
+sb3-contrib==2.8.0
+pybullet==3.2.7
+gymnasium==1.2.3
+numpy==2.2.6
+torch==2.12.0
+matplotlib==3.10.9
+tensorboard==2.20.0
+scipy==1.15.3
+pyyaml==6.0.3
+# gym-pybullet-drones PyPI'da değil — kaynak koddan kurulur:
+# pip install git+https://github.com/utiasDSL/gym-pybullet-drones.git@v2.1.0

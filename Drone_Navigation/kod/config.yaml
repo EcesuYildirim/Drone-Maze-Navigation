@@ -1,0 +1,53 @@
+# config.yaml — Ana konfigürasyon (Model E, literatür optimalli LSTM)
+# Bu dosya ppo_config_E.yaml ile birebir aynıdır.
+# Kaynak: config/ppo_config_E.yaml
+
+ppo:
+  policy: "MlpLstmPolicy"
+  learning_rate: 0.0003
+  n_steps: 512
+  batch_size: 64
+  n_epochs: 10
+  gae_lambda: 0.95
+  clip_range: 0.15
+  entropy_coef: 0.01
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  gamma: 0.99
+  seeds: [42, 0, 1, 2, 3]
+  lstm_hidden_size: 128
+
+training:
+  total_timesteps: 3_000_000
+  eval_freq: 10_000
+  eval_episodes: 20
+  save_freq: 100_000
+  log_dir: "results/logs"
+  model_dir: "results/models"
+
+environment:
+  max_steps: 1000
+  goal_radius: 0.3
+  collision_penalty: -100.0
+  goal_reward: 100.0
+  step_penalty: -0.001
+  approach_scale: 8.0
+  dist_penalty_scale: 0.02
+  num_lidar_rays: 24
+  lidar_max_range: 5.0
+
+curriculum:
+  success_threshold: 0.50
+  stages:
+    - layout: "easy"
+      spawn_radius: 1.5
+    - layout: "easy"
+      spawn_radius: 3.5
+    - layout: "easy"
+      spawn_radius: null
+    - layout: "medium"
+      spawn_radius: 2.0
+    - layout: "medium"
+      spawn_radius: 5.0
+    - layout: "medium"
+      spawn_radius: null

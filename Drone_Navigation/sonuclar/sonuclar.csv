@@ -1,0 +1,6 @@
+seed,total_timesteps,best_mean_reward,best_success_rate,final_mean_reward,final_success_rate,final_collision_rate,mean_ep_length,best_at_timestep,curriculum_stage_reached
+42,3000000,104.266,1.0,-61.813,0.0,0.2,665.5,1000000,2
+0,3000000,103.909,1.0,-88.561,0.0,0.75,699.7,300000,2
+1,1500000,103.214,1.0,-65.093,0.0,0.2,639.5,740000,2
+2,3000000,103.476,1.0,-76.912,0.0,0.45,785.8,1400000,2
+3,3000000,102.930,1.0,-52.251,0.0,0.10,931.9,120000,2
